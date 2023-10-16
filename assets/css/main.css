@@ -1,0 +1,16 @@
+/* WEB FONTS AND NODE IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Knewave&display=swap');
+/* GLOBAL STYLES + UTILS */
+@import './global/variables.css';
+@import './global/common.css';
+@import './global/cms-content.css';
+/* COMPONENT STYLES */
+@import './parts/header.css';
+@import './parts/footer.css';
+/* TEMPLATE STYLES */
+@import './pages/home.css';
+@import './pages/page.css';
+@import './pages/posts-common.css';
+@import './pages/portfolio.css';
+@import './pages/thoughts.css';
+

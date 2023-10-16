@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+  <head>
+    <title>{{meta_title}}</title>
+    <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link rel="preload" as="style" href="{{asset 'dist/main.css'}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset 'dist/main.css'}}" />
+    {{ghost_head}}
+  </head>
+  <body class="{{body_class}} fonts-loading">
+    <div class="masthead">
+      <div class="masthead__content">
+        {{#page}}
+          <h1 class="solid">{{title}}</h1>
+          {{content}}
+        {{/page}}
+        {{navigation}}
+      </div>
+    </div>
+    {{ghost_foot}}
+    <script type="text/javascript" src="{{asset 'dist/main.js'}}"></script>
+    {{!-- @TODO Don't even run this if the user prefers-reduced-motion --}}
+    <script type="text/javascript">
+      setupMastheadStars(60);
+    </script>
+  </body>
+</html>

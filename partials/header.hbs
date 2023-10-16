@@ -1,0 +1,16 @@
+<header class="page-header">
+  <div class="page-constraint">
+    <div class="logo">
+      {{#if @site.logo}}
+        <a href="/">
+          <img src="{{@site.logo}}" alt="logo for {{@site.title}}"/>
+        </a>
+        <h1 class="solid">{{@site.title}}</h1>
+      {{/if}}
+      {{#unless @site.logo}}
+        <h1 class="solid"><a href="/">{{@site.title}}</a></h1>
+      {{/unless}}
+    </div>
+    {{navigation}}
+  </div>
+</header>

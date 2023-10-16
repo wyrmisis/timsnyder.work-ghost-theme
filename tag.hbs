@@ -1,0 +1,21 @@
+{{!< default}}
+{{#tag}}
+  {{> 'page/tag-header'}}
+{{/tag}}
+
+<main class="gh-main">
+  {{#page}}
+  <section class="gh-content gh-canvas is-body">
+    {{content}}
+  </section>
+  {{/page}}
+  <section class="posts">
+  {{#foreach posts}}
+    {{> 'blog/blog-list-item'}}
+  {{/foreach}}
+  </section>
+</main>
+
+<footer class="posts-footer">
+  {{pagination}}
+</footer>

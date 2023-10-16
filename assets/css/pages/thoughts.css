@@ -1,0 +1,16 @@
+.page-thoughts {
+
+  aside {
+    h2 {
+      margin: 0 0 .5em;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      gap: .5em;
+    }
+  }
+}

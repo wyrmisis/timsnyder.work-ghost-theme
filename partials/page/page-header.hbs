@@ -1,0 +1,36 @@
+<header class="gh-article-header gh-canvas">
+  <div class="title-container">
+    <h1 class="gh-article-title is-title{{#if feature_image}} solid{{/if}}">
+      {{title}}
+    </h1>
+    {{#if custom_excerpt}}
+      <p class="gh-article-excerpt is-body">{{custom_excerpt}}</p>
+    {{/if}}
+    {{#if tags}}
+      <div class="tags" aria-label="Tagged with">
+      {{#foreach tags as |tag|}}
+        <a class="button" href="{{tag.url}}">{{tag.name}}</a>
+      {{/foreach}}
+      </div>
+    {{/if}}
+  </div>
+  {{#if feature_image}}
+    <style>
+      .gh-article-header:after {
+        background-image: url("{{img_url feature_image}}");
+      }
+    </style>
+    <img class="feature-image"
+        srcset="{{img_url feature_image size="s"}} 300w,
+                {{img_url feature_image size="m"}} 600w,
+                {{img_url feature_image size="l"}} 1000w,
+                {{img_url feature_image size="xl"}} 2000w"
+        sizes="(min-width: 1400px) 1400px, 92vw"
+        src="{{img_url feature_image size="xl"}}"
+        alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+    />
+    {{#if feature_image_caption}}
+      <figcaption>{{feature_image_caption}}</figcaption>
+    {{/if}}
+  {{/if}}
+</header>

@@ -1,0 +1,362 @@
+/**
+ * Contents of this sheet are adapted from Ghost's "Source" theme
+ * @TODO: Tweak this as necessary
+ */
+
+/* Content refers to styling all page and post content that is
+created within the Ghost editor. The main content handles
+headings, text, images and lists. We deal with cards lower down. */
+.gh-article-header {
+  margin: 0 0 2em;
+}
+
+.gh-article-excerpt {
+  text-align: center;
+  color: var(--color-secondary-dark);
+  font-style: italic;
+  max-width: 50ch;
+  margin: 0 auto;
+}
+
+.gh-content {
+  letter-spacing: -0.01em;
+
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6 {
+    text-align: center;
+  }
+}
+
+/* Default vertical spacing */
+.gh-content > * + * {
+  margin-top: calc(28px * var(--content-spacing-factor, 1));
+  /* margin-bottom: 0; */
+}
+
+.gh-content > :not(.kg-width-full) {
+  box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+  max-width: 75ch;
+  line-height: 1.5em;
+}
+
+.gh-content > :not(.kg-card) {
+	padding: 0 2rem;
+}
+
+/* Remove space between full-width cards */
+.gh-content > .kg-width-full + .kg-width-full:not(.kg-width-full.kg-card-hascaption + .kg-width-full) {
+  margin-top: 0;
+}
+
+/* Add back a top margin to all headings,
+unless a heading is the very first element in the post content */
+.gh-content > [id]:not(:first-child) {
+  margin-top: calc(56px * var(--content-spacing-factor, 1));
+}
+
+/* Add a small margin between a heading and paragraph after it */
+.gh-content > [id] + p {
+  margin-top: calc(12px * var(--content-spacing-factor, 1));
+}
+
+/* A larger margin before/after dividers, blockquotes and embeds */
+.gh-content > :is(hr, blockquote, iframe) {
+  position: relative;
+  margin-top: calc(48px * var(--content-spacing-factor, 1)) !important;
+}
+
+.gh-content > :is(hr, blockquote, iframe) + * {
+  margin-top: calc(48px * var(--content-spacing-factor, 1)) !important;
+}
+
+/* Now the content typography styles */
+.gh-content h2 {
+  font-size: calc(1.6em * var(--factor, 1));
+  letter-spacing: -0.02em;
+}
+
+.gh-content h3 {
+  font-size: calc(1.3em * var(--factor, 1));
+  letter-spacing: -0.017em;
+}
+
+.gh-content a {
+  color: var(--ghost-accent-color);
+  text-decoration: underline;
+}
+
+.gh-content .kg-callout-card .kg-callout-text,
+.gh-content .kg-toggle-card .kg-toggle-content > :is(ul, ol, p) {
+  font-size: 0.95em;
+}
+
+.gh-content :is(ul, ol) {
+  padding-left: 28px;
+}
+
+.gh-content :is(li + li, li :is(ul, ol)) {
+  margin-top: 8px;
+}
+
+.gh-content ol ol li {
+  list-style-type: lower-alpha;
+}
+
+.gh-content ol ol ol li {
+  list-style-type: lower-roman;
+}
+
+.gh-content hr {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+  border: 0;
+}
+
+.gh-content table:not(.gist table) {
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  overflow-x: auto;
+  font-size: 1.25rem;
+  white-space: nowrap;
+  vertical-align: top;
+  border-spacing: 0;
+  border-collapse: collapse;
+  -webkit-overflow-scrolling: touch;
+  background: radial-gradient(ellipse at left, rgb(0 0 0 / 0.2) 0%, rgb(0 0 0 / 0) 75%) 0 center, radial-gradient(ellipse at right, rgb(0 0 0 / 0.2) 0%, rgb(0 0 0 / 0) 75%) 100% center;
+  background-repeat: no-repeat;
+  background-attachment: scroll, scroll;
+  background-size: 10px 100%, 10px 100%;
+}
+
+.gh-content table:not(.gist table) td:first-child {
+  background-image: linear-gradient(to right, rgb(255 255 255 / 1) 50%, rgb(255 255 255 / 0) 100%);
+  background-repeat: no-repeat;
+  background-size: 20px 100%;
+}
+
+.gh-content table:not(.gist table) td:last-child {
+  background-image: linear-gradient(to left, rgb(255 255 255 / 1) 50%, rgb(255 255 255 / 0) 100%);
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: 20px 100%;
+}
+
+.gh-content table:not(.gist table) th {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-darkgrey);
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  background-color: var(--color-white);
+}
+
+.gh-content table:not(.gist table) th,
+.gh-content table:not(.gist table) td {
+  padding: 6px 12px;
+  border: 1px solid var(--color-light-gray);
+}
+
+/* 16. Cards
+/* ---------------------------------------------------------- */
+
+/* Add extra margin before/after any cards, except for when immediately preceeded by a heading */
+
+.gh-content :not(.kg-card):not(table):not([id]) + :is(.kg-card, table) {
+  margin-top: calc(48px * var(--content-spacing-factor, 1));
+}
+
+.gh-content :is(.kg-card, table) + :not(.kg-card):not(table):not([id]) {
+  margin-top: calc(48px * var(--content-spacing-factor, 1));
+}
+
+.gh-content :not(.kg-card):not([id]) + .kg-card.kg-width-full {
+  margin-top: calc(68px * var(--content-spacing-factor, 1));
+}
+
+.gh-content .kg-card.kg-width-full + :not(.kg-card):not([id]) {
+  margin-top: calc(68px * var(--content-spacing-factor, 1));
+}
+
+/* Image */
+
+.kg-image {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Embed */
+
+.kg-embed-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Gallery */
+
+.kg-image[width][height],
+.kg-gallery-image {
+  cursor: pointer;
+}
+
+.kg-image-card a:hover,
+.kg-gallery-image a:hover {
+  opacity: 1 !important;
+}
+
+/* Toggle */
+
+.kg-card.kg-toggle-card .kg-toggle-heading-text {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.has-serif-title .kg-toggle-card .kg-toggle-heading-text {
+  font-family: var(--font-serif);
+}
+
+.has-mono-title .kg-toggle-card .kg-toggle-heading-text {
+  font-family: var(--font-mono);
+}
+
+/* Callout */
+
+.kg-callout-card.kg-card {
+  border-radius: 0.25em;
+}
+
+.kg-callout-card-accent a {
+  text-decoration: underline;
+}
+
+/* Blockquote */
+
+blockquote:not([class]) {
+  padding-left: 2rem;
+  border-left: 4px solid var(--ghost-accent-color);
+}
+
+blockquote.kg-blockquote-alt {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--color-secondary-text);
+}
+
+/* Button */
+
+.kg-card.kg-button-card .kg-btn {
+  font-size: 1em;
+}
+
+/* Header */
+.kg-card.kg-header-card {
+  h2.kg-header-card-header,
+  h3.kg-header-card-subheader {
+    font-weight: inherit;
+  }
+}
+
+/* Bookmark */
+
+.kg-bookmark-card .kg-bookmark-container {
+  border-radius: 0.25em !important;
+}
+
+.kg-bookmark-card .kg-bookmark-container:hover {
+  opacity: 1;
+}
+
+.kg-bookmark-card .kg-bookmark-content {
+  padding: 1.15em;
+}
+
+.kg-bookmark-card .kg-bookmark-title {
+  font-size: 0.9em;
+}
+
+.kg-bookmark-card .kg-bookmark-description {
+  max-height: none;
+  margin-top: 0.3em;
+  font-size: 0.8em;
+}
+
+.kg-bookmark-card .kg-bookmark-metadata {
+  font-size: 0.8em;
+}
+
+.kg-bookmark-card .kg-bookmark-thumbnail img {
+  border-radius: 0 0.2em 0.2em 0;
+}
+
+/* Product */
+
+.kg-product-card.kg-card .kg-product-card-image {
+  margin-bottom: 12px;
+}
+
+.kg-product-card.kg-card a.kg-product-card-button {
+  height: 2.8em;
+  margin-top: 12px;
+}
+
+.has-serif-title .kg-product-card.kg-card .kg-product-card-title {
+  font-family: var(--font-serif);
+}
+
+.has-mono-title .kg-product-card.kg-card .kg-product-card-title {
+  font-family: var(--font-mono);
+}
+
+.has-serif-body .kg-product-card-description :is(p, ul, ol) {
+  font-family: var(--font-serif-alt);
+}
+
+/* File */
+
+.kg-file-card.kg-card .kg-file-card-container {
+  padding: 0.6em;
+}
+
+.kg-file-card.kg-card .kg-file-card-contents {
+  margin: 4px 8px 6px;
+}
+
+.kg-file-card.kg-card .kg-file-card-metadata {
+  font-size: 0.9em;
+}
+
+.kg-file-card.kg-card .kg-file-card-filesize::before {
+  margin-right: 6px;
+  margin-left: 6px;
+}
+
+/* Caption */
+
+figcaption {
+  margin-top: 12px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.kg-card.kg-width-full figcaption {
+  padding: 0 16px;
+}
+
+figcaption a {
+  color: var(--ghost-accent-color);
+  text-decoration: underline;
+}
+
+.kg-width-wide {}
+.kg-width-full {}

@@ -1,0 +1,60 @@
+<footer class="page-footer">
+  <div class="page-constraint">
+    <section class="footer-block footer-block--recent-projects">
+      <h2 class="solid">Recent Projects</h2>
+      <ul>
+      {{#get "posts" limit="5" filter="tag:project"}}
+        {{#foreach posts}}
+          <li>
+            <a href="{{url}}" class="{{link_class for=url activeClass="active"}}">{{title}}</a>
+          </li>
+        {{/foreach}}
+      {{/get}}
+      </ul>
+    </section>
+
+    <section class="footer-block footer-block--recent-thoughts">
+      <h2 class="solid">Recent Thoughts</h2>
+      <ul>
+      {{#get "posts" limit="3" filter="tag:-project"}}
+        {{#foreach posts}}
+          <li>
+            <a href="{{url}}" class="{{link_class for=url activeClass="active"}}">{{title}}</a>
+            <span class="read-time">{{reading_time}}</span>
+          </li>
+        {{/foreach}}
+      {{/get}}
+      </ul>
+    </section>
+
+    <section class="footer-block footer-block--links">
+      <h2 class="solid">Links</h2>
+      <ul>
+        <li>
+          <box-icon type="logo" name="github"></box-icon>
+          <a href="https://github.com/wyrmisis" target="_blank">
+            Check me out on Github
+          </a>
+        </li>
+        <li>
+          <box-icon name="comment"></box-icon>
+          <a href="" data-contact-me aria-label="Contact Form" title="Contact Form">
+            Contact me
+          </a>
+        </li>
+        <li>
+          <box-icon name="detail"></box-icon>
+          <a href="" data-work-together aria-label="Project Intake Form" title="Project Intake Form">
+            Looking for a website or app?
+          </a>
+        </li>
+        <li>
+          <box-icon name="coin"></box-icon>
+          <a href="" data-tip-jar aria-label="Tip Jar" title="Tip Jar">
+            Throw a coin in the tip jar
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</footer>

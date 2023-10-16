@@ -1,0 +1,39 @@
+:root {
+	--heading-font: "Knewave", sans-serif;
+	--body-font: "Fira Sans", sans-serif;
+
+	--color-background-dark: #141D21;
+	--color-background-light: #ffffff;
+
+	--body-color-dark: #444444;
+	--body-color-light: #ffffff;
+	--body-secondary-color-light: #ccc;
+
+	--color-primary-light: #9273de;
+	--color-primary-mid: #402a78;
+	--color-primary-dark: #154096;
+
+	--color-secondary-light: #326EE6;
+	--color-secondary-mid: #295cc4;
+	--color-secondary-dark: #241844;
+
+	--gradient-light: linear-gradient(
+		120deg,
+		var(--color-primary-light),
+		var(--color-secondary-light)
+	);
+	
+	--gradient-mid: linear-gradient(
+		120deg,
+		var(--color-primary-mid),
+		var(--color-secondary-mid)
+	);
+
+	--gradient-dark: linear-gradient(
+		170deg,
+		var(--color-secondary-dark),
+		var(--color-primary-dark)
+	);
+
+	--text-shadow: filter: drop-shadow(2px 2px  rgba(0, 0, 0, .5));
+}

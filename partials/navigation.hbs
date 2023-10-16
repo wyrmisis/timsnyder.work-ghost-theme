@@ -1,0 +1,16 @@
+<nav class="page-navigation{{#if isSecondary}} page-navigation--secondary{{/if}}{{^is "home"}} page-navigation--primary{{/is}}">
+	<ul class="page-navigation__list">
+    {{#foreach navigation}}
+    <li class="page-navigation__item page-navigation__item--{{slug}}{{#if current}} page-navigation__item--current{{/if}}{{#is "home"}} button{{/is}}">
+			<a href="{{url absolute="true"}}">{{label}}</a>
+		</li>
+    {{/foreach}}
+		{{^is "home"}}
+		<li class="page-navigation__item page-navigation__item--search">
+			<a href="" class="gh-search" data-ghost-search>
+				<box-icon name="search"></box-icon>
+			</a>
+		</li>
+		{{/is}}
+  </ul>
+</nav>

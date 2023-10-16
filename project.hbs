@@ -1,0 +1,25 @@
+{{!< default}}
+{{#page}}
+  {{#match @page.show_title_and_feature_image}}
+    {{> 'page/page-header'}}
+  {{/match}}
+{{/page}}
+<main class="gh-main">
+  {{#page}}
+  <section class="gh-content gh-canvas is-body">
+    {{content}}
+  </section>
+  {{/page}}
+  <section class="posts">
+  {{#get "posts" limit="all" filter="featured:true+tag:project" as |featured|}}
+    {{#foreach featured}}
+      {{> "portfolio/portfolio-featured-item"}}
+    {{/foreach}}
+  {{/get}}
+  {{#get "posts" limit="all" filter="featured:false+tag:project" as |projects|}}
+    {{#foreach projects}}
+      {{> "portfolio/portfolio-list-item"}}
+    {{/foreach}}
+  {{/get}}
+  </section>
+</main>

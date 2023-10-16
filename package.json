@@ -1,0 +1,36 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1",
+  "description": "A theme for for the Ghost install at timsnyder.work",
+  "screenshots": {},
+  "scripts": {
+    "test": "gscan .",
+    "start": "npm run watch",
+    "watch": "npm run build && gulp",
+    "build": "gulp build"
+  },
+  "author": {
+    "email": "timsnyder.work@proton.me"
+  },
+  "config": {
+    "card_assets": true
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "gulp": "^4.0.2",
+    "gulp-livereload": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.1",
+    "rollup": "^4.0.2",
+    "yargs": "^17.7.2"
+  },
+  "dependencies": {
+    "boxicons": "^2.1.4"
+  }
+}

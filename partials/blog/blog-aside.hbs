@@ -1,0 +1,12 @@
+<aside>
+{{#get "tags" include="count.posts"}}
+  <h2>Tags</h2>
+  <ul>
+  {{#foreach tags}}
+    <li><a class="button" href="{{url}}">{{name}}  ({{count.posts}})</a></li>
+  {{else}}
+    <li class="empty">None yet!</li>
+  {{/foreach}}
+  </ul>
+{{/get}}
+</aside>

@@ -1,0 +1,124 @@
+.page-header {
+	background-color: var(--color-background-dark);
+	color: var(--body-color-light);
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .5);
+
+	.page-constraint {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: .5em;
+		img {
+			max-width: 64px;
+			height: auto;
+		}
+	}
+
+	h1 {
+		margin: 0;
+		padding: .5em 0;
+		line-height: 1em;
+	}
+}
+
+.page-navigation {
+	&--primary {
+		margin-left: auto;
+		a {
+			color: var(--body-secondary-color-light);
+			text-decoration: none;
+			transition: 333ms color ease-in-out;
+			&:hover {
+				color: var(--color-secondary-light);
+			}
+		}
+		ul {
+			display: flex;
+			align-items: center;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			gap: 1em;
+		}
+	}
+	
+	&__item {
+		line-height: 1em;
+
+		&--current a {
+			color: var(--color-primary-light);
+		}
+	}
+}
+
+.tipjar-dialog {
+	border-radius: 4px;
+	padding: 4px;
+	overflow: hidden;
+	border: none;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+
+	.close-button {
+		position: absolute;
+		right: 1em;
+		top: 1em;
+
+		background: none;
+		color: var(--body-secondary-color-light);
+		padding: 0;
+		border: none;
+		cursor: pointer;
+		transition: 333ms color ease-in-out;
+
+		&:hover {
+			color: var(--color-secondary-light)
+		}
+	}
+	
+	&::backdrop {
+		background: linear-gradient(170deg, #241844aa, #154096aa);
+	}
+
+	iframe {
+		border: none;
+		width: 100%;
+		height: 670px;
+		background: #f9f9f9;
+	}
+}
+
+
+.tags {
+	padding: 0;
+	margin: 1em auto 0;
+	display: flex;
+	gap: .5em;
+	box-sizing: border-box;
+	flex-wrap: wrap;
+	max-width: 50ch;
+	justify-content: center;
+}
+
+.tag {
+	padding: .25em .5em;
+	color: var(--body-color-light);
+	line-height: 1em;
+	background-color: var(--tag-color, var(--color-secondary-dark));
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: .75em;
+	position: relative;
+	border-radius: .25em;
+
+	&:first-of-type {
+		margin-left: auto;
+	}
+	&:last-of-type {
+		margin-right: auto;
+	}
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+  <head>
+    <title>{{meta_title}}</title>
+    <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link rel="preload" as="stylesheet" href="{{asset 'dist/main.css'}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset 'dist/main.css'}}" />
+    <script src="https://tally.so/widgets/embed.js"></script>
+    {{ghost_head}}
+  </head>
+
+  <body class="{{body_class}} fonts-loading">
+    {{> "header" }}
+    <section class="page-content">
+    {{{body}}}
+    </section>
+    {{> "footer" }}
+    {{ghost_foot}}
+    <script type="text/javascript" src="{{asset 'dist/main.js'}}"></script>
+  </body>
+</html>

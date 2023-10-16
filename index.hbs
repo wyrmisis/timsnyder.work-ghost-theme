@@ -1,0 +1,25 @@
+{{!< default}}
+{{#page}}
+  {{#match @page.show_title_and_feature_image}}
+    {{> 'page/page-header'}}
+  {{/match}}
+{{/page}}
+
+<main class="gh-main">
+  {{#page}}
+  <section class="gh-content gh-canvas is-body">
+    {{content}}
+  </section>
+  {{/page}}
+  <section class="posts">
+  {{#foreach posts}}
+    {{> 'blog/blog-list-item'}}
+  {{/foreach}}
+  </section>
+</main>
+
+{{> 'blog/blog-aside'}}
+
+<footer class="posts-footer">
+  {{pagination}}
+</footer>

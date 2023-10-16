@@ -1,0 +1,23 @@
+.page-projects {
+  & .gh-main {
+    max-width: 95ch;
+  }
+
+  .posts {
+    @media screen and (min-width: 100ch) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.post-item--project {
+  @media screen and (min-width: 100ch) {
+    &.post-item--featured {
+      grid-column: 1/3;
+
+      .post-title {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
