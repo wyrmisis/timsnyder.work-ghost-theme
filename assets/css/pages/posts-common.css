@@ -129,7 +129,10 @@
       left: 50%;
       z-index: 2;
       transform: translateX(-50%) translateY(-50%);
-      color: var(--body-color-light);
+
+      &, h1, p {
+        color: var(--body-color-light);
+      }
     }
 
     &:after {

@@ -18,7 +18,7 @@ body:not(.home-template) {
 	min-height: 100vh;
 }
 
-.page-content {
+section.page-content {
   display: flex;
 	margin-bottom: auto;
   gap: 1em;
@@ -33,9 +33,11 @@ body:not(.home-template) {
       main {
         box-sizing: border-box;
         margin: 0 auto;
-        padding: 0 1em;
         width: 100%;
-        max-width: 75ch;
+        &:not(.post-content) {
+          padding: 0 1em;
+          max-width: 75ch;
+        }
       }
     }
 
