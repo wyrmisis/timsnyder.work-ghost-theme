@@ -161,13 +161,15 @@
       box-shadow: 0 0 10px var(--color-background-dark);
 
       @media screen and (orientation: landscape) {
-        width: 100%;
+        width: fit-content;
         box-sizing: border-box;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
         box-shadow: none;
+        max-width: 60ch;
+        background-color: var(--color-background-dark-60);
       }
     }
 
