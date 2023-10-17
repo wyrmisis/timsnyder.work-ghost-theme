@@ -26,6 +26,7 @@ body:not(.home-template) {
 
 .page-content {
   display: flex;
+  gap: 1em;
   flex-direction: column;
   width: 100%;
 	margin: 0 auto auto;
@@ -55,7 +56,6 @@ body:not(.home-template) {
     * Two-column layout (for blog index)
     */
   &:has(aside) {
-
     header {
       width: 100%;
     }
