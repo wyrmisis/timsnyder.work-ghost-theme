@@ -36,4 +36,22 @@
 	);
 
 	--text-shadow: filter: drop-shadow(2px 2px  rgba(0, 0, 0, .5));
+
+	/**
+	 * TYPOGRAPHY
+	 */
+	--scale: .8;
+
+	@media (min-width: 640px) {
+		--scale: 1;
+	}
+
+	--font-size-base: 1rem;
+	--font-size-post-title: calc(var(--font-size-base) * 3);
+	--font-size-h1: calc(var(--font-size-base) * 2.50);
+	--font-size-h2: calc(var(--font-size-base) * 2.00);
+	--font-size-h3: calc(var(--font-size-base) * 1.75);
+	--font-size-h4: calc(var(--font-size-base) * 1.50);
+	--font-size-h5: calc(var(--font-size-base) * 1.25);
+	--font-size-h6: calc(var(--font-size-base) * 1.00);
 }

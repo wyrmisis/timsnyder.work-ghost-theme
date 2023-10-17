@@ -2,7 +2,9 @@ module.exports = {
 	plugins: [
 		require('postcss-import'),
 		require('postcss-nested'),
-		require('autoprefixer'),
-		require('cssnano'),
+		require('autoprefixer')(),
+		require('cssnano')({
+			preset: 'advanced'
+		}),
 	]
 }

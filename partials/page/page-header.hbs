@@ -1,19 +1,4 @@
 <header class="gh-article-header gh-canvas">
-  <div class="title-container">
-    <h1 class="gh-article-title is-title{{#if feature_image}} solid{{/if}}">
-      {{title}}
-    </h1>
-    {{#if custom_excerpt}}
-      <p class="gh-article-excerpt is-body">{{custom_excerpt}}</p>
-    {{/if}}
-    {{#if tags}}
-      <div class="tags" aria-label="Tagged with">
-      {{#foreach tags as |tag|}}
-        <a class="button" href="{{tag.url}}">{{tag.name}}</a>
-      {{/foreach}}
-      </div>
-    {{/if}}
-  </div>
   {{#if feature_image}}
     <style>
       .gh-article-header:after {
@@ -33,4 +18,19 @@
       <figcaption>{{feature_image_caption}}</figcaption>
     {{/if}}
   {{/if}}
+  <div class="title-container">
+    <h1 class="gh-article-title is-title{{#if feature_image}} solid{{/if}}">
+      {{title}}
+    </h1>
+    {{#if custom_excerpt}}
+      <p class="gh-article-excerpt is-body">{{custom_excerpt}}</p>
+    {{/if}}
+    {{#if tags}}
+      <div class="tags" aria-label="Tagged with">
+      {{#foreach tags as |tag|}}
+        <a class="button" href="{{tag.url}}">{{tag.name}}</a>
+      {{/foreach}}
+      </div>
+    {{/if}}
+  </div>
 </header>

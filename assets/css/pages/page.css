@@ -4,30 +4,6 @@
     display: inline-block;
     margin: 0 auto;
     text-align: center;
-    font-size: 3rem;
-  }
-}
-
-.post-navigation {
-  @media not screen {
-    display: none;
-  }
-  &:empty {
-    display: none;
-  }
-  max-width: 60ch;
-  margin-bottom: 0;
-  margin-top: auto;
-  margin-bottom: 0;
-  display: flex;
-  justify-content: space-between;
-
-  .post {
-    &-prev {
-      margin-right: auto;
-    }
-    &-next {
-      margin-left: auto;
-    }
+    font-size: var(--font-size-post-title);
   }
 }

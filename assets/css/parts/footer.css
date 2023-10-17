@@ -2,7 +2,7 @@
 	background-color: var(--color-background-dark);
 	color: var(--body-color-light);
 	padding: 1em 0 2em;
-	margin-top: 2em;
+	margin: 2em 0 -40px;
 	box-shadow: 0 -4px 10px 0 rgba(0, 0, 0, .5);
 
 	@media not screen {

@@ -2,11 +2,12 @@
 <html lang="{{@site.locale}}">
   <head>
     <title>{{meta_title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect"
       href="https://fonts.gstatic.com"
       crossorigin />
     <link rel="preload" as="style" href="{{asset 'dist/main.css'}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset 'dist/main.css'}}" />
+    <link rel="stylesheet preload prefetch" type="text/css" as="style" href="{{asset 'dist/main.css'}}" />
     {{ghost_head}}
   </head>
   <body class="{{body_class}} fonts-loading">

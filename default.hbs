@@ -2,11 +2,9 @@
 <html lang="{{@site.locale}}">
   <head>
     <title>{{meta_title}}</title>
-    <link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin />
-    <link rel="preload" as="stylesheet" href="{{asset 'dist/main.css'}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset 'dist/main.css'}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" as="style" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet preload prefetch" type="text/css" as="style" href="{{asset 'dist/main.css'}}" />
     <script src="https://tally.so/widgets/embed.js"></script>
     {{ghost_head}}
   </head>
@@ -14,9 +12,10 @@
   <body class="{{body_class}} fonts-loading">
     {{> "header" }}
     <section class="page-content">
-    {{{body}}}
+      {{{body}}}
     </section>
     {{> "footer" }}
+    <button type="button" class="button button--action button--to-top" data-scroll-to-top aria-label="Scroll to top"><box-icon name='chevrons-up'></box-icon></button>
     {{ghost_foot}}
     <script type="text/javascript" src="{{asset 'dist/main.js'}}"></script>
   </body>

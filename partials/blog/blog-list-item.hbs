@@ -18,14 +18,14 @@
         <h2 class="solid">{{title}}</h2>
         <p class="excerpt excerpt--header" aria-hidden="true">{{excerpt characters="180"}}</p>
         <span class="post-meta">
+          <time class="posted-date" datetime="{{date format="YYYY-MM-DD"}}">
+            Posted {{date published_at timeago="true"}}
+          </time>
+
           <span class="reading-time">
             <box-icon name='timer'></box-icon>
             <p>{{reading_time}}</p>
           </span>
-          <span aria-hidden="true">|</span>
-          <time class="posted-date" datetime="{{date format="YYYY-MM-DD"}}">
-            Posted {{date published_at timeago="true"}}
-          </time>
         </span>
       </div>
     </a>
